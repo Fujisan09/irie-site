@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>会社概要 | 株式会社アイリー（リニューアル案）</title>
+<meta name="description" content="株式会社アイリーの会社概要ページ リニューアル案。誠実で堅実な不動産取引を、東京・神保町から。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E1F3A">
+<meta property="og:title" content="会社概要 | 株式会社アイリー">
+<meta property="og:description" content="全てのお客様に、「誠実で堅実」な不動産取引を。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1F3A'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='34' fill='%23F1F1EE'%3EI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;family=Shippori+Mincho+B1:wght@500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap">
+<style>
+/* Layout: an ink "drawing sheet" hero with a vertical mincho statement, a paper body with hairline
+   title-block tables, and an ink contact/footer bookend. Single brand palette in light and dark. */
+:root{
+  --paper:#F1F1EE;
+  --paper-2:#E7E7E2;
+  --ink:#0E1F3A;
+  --ink-glass:rgba(14,31,58,.92);
+  --text:#15202F;
+  --text-2:#2E3845;
+  --muted:#5C6672;
+  --rule:#C9CBC7;
+  --seal:#B8352A;
+  --seal-deep:#9A2B21;
+  --on-ink:#F1F1EE;
+  --on-ink-2:rgba(241,241,238,.78);
+  --on-ink-3:rgba(241,241,238,.6);
+  --on-ink-rule:rgba(241,241,238,.2);
+  --grid-line:rgba(241,241,238,.055);
+  --serif:'Shippori Mincho B1','Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
+  --sans:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',sans-serif;
+  --num:'Barlow','Zen Kaku Gothic New','Hiragino Kaku Gothic ProN',sans-serif;
+  --gutter:clamp(20px,6vw,72px);
+  --section:clamp(80px,10vw,136px);
+  --max:1280px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+a{color:inherit;text-decoration:none;transition:color .25s ease,background-color .25s ease,border-color .25s ease,opacity .25s ease}
+a:focus-visible,button:focus-visible{outline:2px solid var(--seal);outline-offset:4px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+[hidden]{display:none!important}
+p{margin:0}
+h1,h2,h3{margin:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--ink-glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--on-ink)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px;min-height:72px}
+.brand{display:flex;align-items:baseline;gap:14px;color:var(--on-ink);min-height:44px}
+.brand:hover{opacity:.75}
+.brand-mark{font-family:var(--num);font-weight:600;font-size:22px;letter-spacing:.32em}
+.brand-name{font-size:13px;letter-spacing:.1em;white-space:nowrap}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 26px;font-size:14px;letter-spacing:.06em}
+.nav a{color:var(--on-ink-2);min-height:44px;display:inline-flex;align-items:center}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--on-ink)}
+.current-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-right:8px}
+.nav-cta{padding:0 18px;border:1px solid rgba(241,241,238,.45);border-radius:2px;min-height:42px}
+.nav a.nav-cta:hover{background:var(--on-ink);color:var(--ink)}
+.menu-btn{display:none;align-items:center;gap:12px;min-height:44px;padding:0 4px;font-size:13px;letter-spacing:.16em;color:var(--on-ink)}
+.menu-btn svg{display:block}
+@media (max-width:959px){
+  .nav{display:none}
+  .menu-btn{display:inline-flex}
+  .brand-name{display:none}
+}
+@media (max-width:360px){
+  .brand-mark{font-size:20px}
+}
+
+/* ---------- mobile menu ---------- */
+.menu{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--on-ink);display:flex;flex-direction:column;overflow-y:auto;padding-top:calc(14px + env(safe-area-inset-top,0px));padding-bottom:calc(32px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.menu-top{display:flex;align-items:center;justify-content:space-between;min-height:44px}
+.menu-close{display:inline-flex;align-items:center;gap:12px;min-height:44px;padding:0 4px;font-size:13px;letter-spacing:.16em}
+.menu-list{list-style:none;margin:40px 0 0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--on-ink-rule)}
+.menu-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--on-ink-rule);font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.06em;color:var(--on-ink)}
+.menu-list a .en{font-family:var(--num);font-size:12px;letter-spacing:.14em;color:var(--on-ink-3)}
+.menu-foot{margin-top:auto;padding-top:40px;display:flex;flex-direction:column;gap:6px;font-size:13px;letter-spacing:.06em;color:var(--on-ink-2)}
+.menu-foot .number{font-family:var(--num);font-weight:500;font-size:26px;letter-spacing:.06em;color:var(--on-ink);font-variant-numeric:tabular-nums}
+
+/* ---------- hero ---------- */
+.hero{background-color:var(--ink);background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:72px 72px;background-position:center top;color:var(--on-ink)}
+.hero .wrap{padding-block:48px 80px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr auto auto auto;column-gap:56px;row-gap:36px;align-items:start}
+.hero-title{grid-column:1;grid-row:1;font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.24em;display:flex;align-items:center;gap:16px}
+.hero-title::before{content:"";display:block;width:44px;height:1px;background:var(--on-ink-3)}
+.hero-copy{grid-column:1;grid-row:3;font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.7;letter-spacing:.04em;font-feature-settings:'palt'}
+.hero-lead{grid-column:1;grid-row:4;max-width:36em;color:var(--on-ink-2);line-height:2.05}
+.hero-dim{grid-column:1;grid-row:5;display:flex;flex-direction:column;gap:14px;padding-top:8px}
+.dim-labels{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 32px;font-size:13px;letter-spacing:.1em;color:var(--on-ink-2)}
+.dim-labels b{font-weight:500;color:var(--on-ink);font-size:15px;letter-spacing:.06em}
+.dim-labels b.num{font-family:var(--num);font-size:16px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.dim-line{display:flex;align-items:center}
+.dim-line .tick{width:1px;height:14px;background:rgba(241,241,238,.75)}
+.dim-line .line{flex:1 1 auto;height:1px;background:var(--on-ink-3);transform-origin:left center}
+.hero-statement{grid-column:2;grid-row:1 / span 5;justify-self:end;writing-mode:vertical-rl;font-family:var(--serif);font-weight:700;font-size:clamp(76px,9.4vw,132px);line-height:1;letter-spacing:.14em;padding-top:6px}
+.hero-statement span{display:inline-block}
+.sp{display:none}
+@media (max-width:719px){
+  .hero .wrap{padding-block:28px 60px}
+  .hero-grid{column-gap:18px;row-gap:28px}
+  .hero-statement{grid-row:1 / span 3;font-size:clamp(60px,16.5vw,76px);letter-spacing:.12em;padding-top:0}
+  .hero-copy{font-size:clamp(21px,5.8vw,26px);line-height:1.65}
+  .hero-lead{grid-column:1 / span 2}
+  .hero-dim{grid-column:1 / span 2}
+  .sp{display:inline}
+}
+
+/* page-load sequence: one orchestrated moment, only for viewers who allow motion */
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  .rv{animation:rise 1s cubic-bezier(.2,.7,.15,1) both}
+  .fd{animation:fade 1.2s ease both}
+  .hero-copy{animation-delay:.2s}
+  .hero-lead{animation-delay:.4s}
+  .hero-dim{animation-delay:.6s}
+  .hero-statement span:nth-child(1){animation-delay:.25s}
+  .hero-statement span:nth-child(2){animation-delay:.37s}
+  .hero-statement span:nth-child(3){animation-delay:.49s}
+  .hero-statement span:nth-child(4){animation-delay:.61s}
+  .hero-statement span:nth-child(5){animation-delay:.73s}
+  .dim-line .line{animation:draw 1.3s cubic-bezier(.75,0,.2,1) 1s both}
+}
+
+/* ---------- sections ---------- */
+.section{padding-block:var(--section)}
+.section--rep{padding-bottom:clamp(72px,9vw,120px)}
+.section--flush{padding-top:0}
+.section--band{background:var(--paper-2)}
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;padding-bottom:28px;border-bottom:1px solid var(--text)}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.2vw,40px);line-height:1.4;letter-spacing:.04em;font-feature-settings:'palt'}
+.h2--lg{font-size:clamp(28px,3.4vw,44px);line-height:1.5}
+.h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.5;letter-spacing:.04em;text-wrap:balance}
+.lead{max-width:38em;color:var(--text-2);line-height:2.05}
+.lead--intro{margin-top:36px}
+.body{font-size:15px;line-height:2;color:var(--text-2)}
+.note{font-size:14px;line-height:2;color:var(--muted)}
+.more{font-size:14px;letter-spacing:.08em;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:rgba(21,32,47,.35)}
+.more:hover{color:var(--seal);text-decoration-color:var(--seal)}
+
+/* representative */
+.rep{display:flex;flex-wrap:wrap;gap:56px 80px;align-items:flex-start;justify-content:space-between}
+.rep-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:32px}
+.rep-name{display:flex;align-items:baseline;gap:18px;padding-top:12px}
+.rep-name .label{font-size:13px;letter-spacing:.16em;color:var(--muted)}
+.rep-name .name{font-family:var(--serif);font-weight:500;font-size:28px;letter-spacing:.12em}
+.rep-photo{flex:0 1 400px;min-width:min(260px,100%);max-width:100%;aspect-ratio:4/5;border:1px solid var(--text);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:13px;letter-spacing:.12em;color:var(--muted)}
+
+/* item grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:56px 48px;margin-top:64px}
+.item{display:flex;flex-direction:column;gap:16px;padding-top:22px;border-top:1px solid var(--rule);min-width:0}
+.item--kanji{border-top:0;padding-top:0;gap:20px}
+.kanji{font-family:var(--serif);font-weight:700;font-size:clamp(56px,6vw,76px);line-height:1;letter-spacing:.06em}
+.item--kanji .h3{font-size:22px}
+
+/* works strip */
+.works{padding-block:clamp(56px,7vw,88px);border-bottom:1px solid var(--rule)}
+.works .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px}
+.works-label{font-size:13px;letter-spacing:.16em;color:var(--muted);flex:0 0 auto}
+.works-list{display:flex;flex-wrap:wrap;gap:8px 40px;font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.04em;flex:1 1 auto;min-width:0}
+
+/* two-column blocks: 会社概要 / アクセス */
+.two{display:flex;flex-wrap:wrap;gap:48px 80px;align-items:flex-start}
+.two-side{flex:0 1 280px;min-width:min(200px,100%);display:flex;flex-direction:column;gap:20px}
+.two-main{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:40px}
+.spec{margin:0;border-top:1px solid var(--text)}
+.spec-row{display:flex;flex-wrap:wrap;gap:6px 32px;padding:26px 0;border-bottom:1px solid var(--rule)}
+.spec-row:last-child{border-bottom-color:var(--text)}
+.spec dt{flex:0 0 160px;font-size:13px;letter-spacing:.14em;color:var(--muted);padding-top:8px}
+.spec dd{flex:1 1 300px;min-width:0;margin:0;font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.7;letter-spacing:.04em}
+.spec dd.num{font-family:var(--num);font-size:24px;line-height:1.5;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.spec dd.date{font-family:var(--num);font-size:22px;line-height:1.6;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.spec dd.list{font-size:19px;line-height:2}
+.spec dd.name{letter-spacing:.08em}
+.zip{display:block;font-family:var(--num);font-size:15px;letter-spacing:.08em;color:var(--muted)}
+.addr-block{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.addr{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2vw,24px);line-height:1.8;letter-spacing:.04em}
+.stations{border-top:1px solid var(--text)}
+.station{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 24px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.station .line-name{letter-spacing:.04em}
+.station .min{font-family:var(--num);font-weight:500;font-size:18px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.hours{display:flex;flex-wrap:wrap;gap:12px 48px;font-size:14px;letter-spacing:.06em;color:var(--text-2)}
+.hours .num{font-family:var(--num);font-weight:500;font-size:16px;font-variant-numeric:tabular-nums}
+
+/* contact + footer */
+.cta{background:var(--ink);color:var(--on-ink)}
+.cta .wrap{padding-block:clamp(80px,10vw,128px) 0}
+.cta-grid{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:48px 64px}
+.cta-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.cta-text .lead{color:var(--on-ink-2)}
+.tel{align-self:flex-start;display:flex;align-items:baseline;gap:16px;color:var(--on-ink);margin-top:8px;flex-wrap:wrap}
+.tel .label{font-size:13px;letter-spacing:.16em;color:var(--on-ink-2)}
+.tel .number{font-family:var(--num);font-weight:500;font-size:clamp(28px,3vw,36px);letter-spacing:.06em;line-height:1.2;font-variant-numeric:tabular-nums}
+.tel:hover{opacity:.8}
+.cta-actions{flex:0 1 320px;min-width:min(260px,100%);display:flex;flex-direction:column;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:0 28px;border-radius:2px;font-size:15px;font-weight:500;letter-spacing:.1em;color:var(--on-ink);text-align:center}
+.btn--fill{background:var(--seal)}
+.btn--fill:hover{background:var(--seal-deep)}
+.btn--line{border:1px solid rgba(241,241,238,.5)}
+.btn--line:hover{background:var(--on-ink);color:var(--ink)}
+.footer{border-top:1px solid var(--on-ink-rule);margin-top:clamp(72px,9vw,112px);padding-block:36px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:24px 48px}
+.foot-brand{display:flex;flex-direction:column;gap:12px;flex:1 1 280px;min-width:0}
+.foot-addr{font-size:13px;line-height:1.9;letter-spacing:.04em;color:var(--on-ink-2)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:0 28px;font-size:13px;letter-spacing:.08em;flex:0 1 auto;min-width:0}
+.foot-nav a{color:var(--on-ink-2);min-height:44px;display:inline-flex;align-items:center}
+.foot-nav a:hover{color:var(--on-ink)}
+.copyright{flex:1 1 100%;font-family:var(--num);font-size:12px;letter-spacing:.12em;color:rgba(241,241,238,.5)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="https://irie-realestate.co.jp/" aria-label="株式会社アイリー トップページ">
+      <span class="brand-mark">IRIE</span>
+      <span class="brand-name">株式会社アイリー</span>
+    </a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="https://irie-realestate.co.jp/service/">事業内容</a>
+      <a href="https://irie-realestate.co.jp/strength/">当社の強み</a>
+      <a href="https://irie-realestate.co.jp/online-meeting/">オンライン商談</a>
+      <a href="https://irie-realestate.co.jp/works/">実績紹介</a>
+      <a href="https://irie-realestate.co.jp/company/" aria-current="page"><span class="current-dot" aria-hidden="true"></span>会社概要</a>
+      <a href="https://irie-realestate.co.jp/news/">お知らせ</a>
+      <a class="nav-cta" href="https://irie-realestate.co.jp/contact/">お問い合わせ</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span>MENU</span>
+      <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 13h22" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="menu-top">
+    <span class="brand"><span class="brand-mark">IRIE</span></span>
+    <button class="menu-close" id="menu-close" type="button" aria-label="メニューを閉じる">
+      <span>CLOSE</span>
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+  <ul class="menu-list">
+    <li><a href="https://irie-realestate.co.jp/service/">事業内容<span class="en">SERVICE</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/strength/">当社の強み<span class="en">STRENGTH</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/online-meeting/">オンライン商談<span class="en">ONLINE</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/works/">実績紹介<span class="en">WORKS</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/company/" aria-current="page">会社概要<span class="en">COMPANY</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/news/">お知らせ<span class="en">NEWS</span></a></li>
+    <li><a href="https://irie-realestate.co.jp/contact/">お問い合わせ<span class="en">CONTACT</span></a></li>
+  </ul>
+  <div class="menu-foot">
+    <span>株式会社アイリー　定休日 水曜日・日曜日</span>
+    <a class="number" href="tel:0368246259">03-6824-6259</a>
+  </div>
+</div>
+
+<main>
+
+<!-- hero: drawing sheet -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <h1 class="hero-title fd">会社概要</h1>
+      <p class="hero-copy rv">全てのお客様に、<br>「誠実で堅実」な<br class="sp">不動産取引を。</p>
+      <p class="hero-lead rv">株式会社アイリーは、不動産売買仲介から区分マンションの販売、収益不動産の企画開発、賃貸事業まで、不動産に関わる事業をワンストップで手がける東京・神保町の不動産会社です。最初のご相談から最後のご契約まで、社長自らが責任を持ってご対応いたします。</p>
+      <div class="hero-dim rv">
+        <div class="dim-labels">
+          <span>設立　<b class="num">2014.08.12</b></span>
+          <span>宅地建物取引業免許　<b>東京都知事（1）第109516号</b></span>
+        </div>
+        <div class="dim-line" aria-hidden="true">
+          <span class="tick"></span>
+          <span class="line"></span>
+          <span class="tick"></span>
+        </div>
+      </div>
+      <div class="hero-statement" role="img" aria-label="誠実で堅実">
+        <span class="rv" aria-hidden="true">誠</span><span class="rv" aria-hidden="true">実</span><span class="rv" aria-hidden="true">で</span><span class="rv" aria-hidden="true">堅</span><span class="rv" aria-hidden="true">実</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- representative -->
+<section class="section section--rep">
+  <div class="wrap rep">
+    <div class="rep-text">
+      <h2 class="h2 h2--lg">最初のご相談から最後のご契約まで、<br>社長自らが。</h2>
+      <p class="lead">当社では、最初のご相談から最後のご契約までを、社長自らが責任を持ってご対応させて頂きます。お客様お一人お一人に丁寧に、誠心誠意向き合うことが、プロとして最高のサービスであると考えております。豊富な知識や経験をご提供できるだけでなく、大手では真似できない「柔軟でスピーディーな対応」を実現しております。</p>
+      <div class="rep-name">
+        <span class="label">代表</span>
+        <span class="name">小笠原 亨</span>
+      </div>
+    </div>
+    <div class="rep-photo">［代表者の写真が入ります］</div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="section section--flush">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2">事業内容</h2>
+      <a class="more" href="https://irie-realestate.co.jp/service/">事業内容を詳しく見る</a>
+    </div>
+    <p class="lead lead--intro">不動産売買仲介から収益不動産の企画開発まで、不動産に関わる事業を幅広く展開しています。一つの会社で全てを手がけているからこそ、お客様の不動産取引をワンストップでサポートできます。</p>
+    <div class="grid">
+      <article class="item">
+        <h3 class="h3">不動産売買仲介</h3>
+        <p class="body">ご相談から物件調査、条件交渉、契約締結、お引渡しまで。知識と経験豊富な不動産取引のプロが、円滑な売買取引をワンストップでサポートします。</p>
+      </article>
+      <article class="item">
+        <h3 class="h3">区分マンションの販売</h3>
+        <p class="body">主にファミリー向けの区分マンションを買い取り、新たな機能性とデザイン性を加えるリノベーションを施して、新築時以上の価値を生み出します。</p>
+      </article>
+      <article class="item">
+        <h3 class="h3">収益不動産の企画開発</h3>
+        <p class="body">土地情報の調査から企画、資金調達、設計、開発まで。収益物件用地をトータルプロデュースし、入居者に人気の出る物件を企画開発します。</p>
+      </article>
+      <article class="item">
+        <h3 class="h3">不動産賃貸事業</h3>
+        <p class="body">オーナーとして保有する物件の賃貸も行っています。設備の充実と丁寧な管理を日々心がけ、入居者様に快適に住んでいただける住まいを提供します。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- strengths -->
+<section class="section section--band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2">当社の強み</h2>
+      <a class="more" href="https://irie-realestate.co.jp/strength/">当社の強みを詳しく見る</a>
+    </div>
+    <p class="lead lead--intro">大手不動産会社では真似のできない、当社ならではの強みです。</p>
+    <div class="grid">
+      <article class="item item--kanji">
+        <p class="kanji" aria-hidden="true">経験</p>
+        <h3 class="h3">豊富な経験</h3>
+        <p class="body">売買仲介、自社での買取再販、土地の購入からの企画開発、オーナーとしての賃貸。不動産事業を幅広く経験してきたからこそ、ワンストップでお客様の取引を支えられます。</p>
+      </article>
+      <article class="item item--kanji">
+        <p class="kanji" aria-hidden="true">対応</p>
+        <h3 class="h3">社長自らが対応</h3>
+        <p class="body">最初のご相談から最後のご契約まで、社長自らが責任を持って対応します。大手では真似できない、柔軟でスピーディーな判断が可能です。</p>
+      </article>
+      <article class="item item--kanji">
+        <p class="kanji" aria-hidden="true">買取</p>
+        <h3 class="h3">自社で買取対応</h3>
+        <p class="body">仲介だけでなく、当社が買主となる買取にも対応しています。売却活動の期間が不要になるため、スムーズに手続きを終え、早期の現金化が可能です。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- works strip -->
+<section class="works">
+  <div class="wrap">
+    <span class="works-label">実績紹介</span>
+    <div class="works-list">
+      <span>北区豊島開発プロジェクト</span>
+      <span>横浜プロジェクト</span>
+      <span>仙台プロジェクト</span>
+    </div>
+    <a class="more" href="https://irie-realestate.co.jp/works/">実績一覧を見る</a>
+  </div>
+</section>
+
+<!-- company profile: title block -->
+<section class="section">
+  <div class="wrap two">
+    <div class="two-side">
+      <h2 class="h2">会社概要</h2>
+      <p class="note">全日本不動産協会に所属する、<br>東京都知事免許の不動産会社です。</p>
+    </div>
+    <div class="two-main">
+      <dl class="spec">
+        <div class="spec-row">
+          <dt>会社名</dt>
+          <dd>株式会社アイリー</dd>
+        </div>
+        <div class="spec-row">
+          <dt>所在地</dt>
+          <dd><span class="zip">〒101-0065</span>東京都千代田区西神田3丁目5-1<br>ウェルスクエア神保町1階</dd>
+        </div>
+        <div class="spec-row">
+          <dt>電話番号</dt>
+          <dd class="num"><a href="tel:0368246259">03-6824-6259</a></dd>
+        </div>
+        <div class="spec-row">
+          <dt>代表者</dt>
+          <dd class="name">小笠原 亨</dd>
+        </div>
+        <div class="spec-row">
+          <dt>設立</dt>
+          <dd class="date">2014年8月12日</dd>
+        </div>
+        <div class="spec-row">
+          <dt>事業内容</dt>
+          <dd class="list">不動産売買仲介<br>区分マンションの販売<br>収益不動産の企画開発<br>不動産賃貸事業</dd>
+        </div>
+        <div class="spec-row">
+          <dt>定休日</dt>
+          <dd>水曜日・日曜日</dd>
+        </div>
+        <div class="spec-row">
+          <dt>免許番号</dt>
+          <dd>東京都知事（1）第109516号</dd>
+        </div>
+        <div class="spec-row">
+          <dt>所属団体</dt>
+          <dd>全日本不動産協会</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- access -->
+<section class="section section--flush">
+  <div class="wrap two">
+    <div class="two-side">
+      <h2 class="h2">アクセス</h2>
+    </div>
+    <div class="two-main">
+      <div class="addr-block">
+        <p class="addr">〒101-0065 東京都千代田区西神田3丁目5-1<br>ウェルスクエア神保町1階</p>
+        <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E8%A5%BF%E7%A5%9E%E7%94%B03%E4%B8%81%E7%9B%AE5-1" target="_blank" rel="noopener">Googleマップで開く</a>
+      </div>
+      <div class="stations">
+        <div class="station">
+          <span class="line-name">東京メトロ東西線　九段下駅</span>
+          <span class="min">徒歩 6分</span>
+        </div>
+        <div class="station">
+          <span class="line-name">都営三田線・新宿線／東京メトロ半蔵門線　神保町駅</span>
+          <span class="min">徒歩 6分</span>
+        </div>
+        <div class="station">
+          <span class="line-name">JR中央・総武線　水道橋駅</span>
+          <span class="min">徒歩 11分</span>
+        </div>
+      </div>
+      <div class="hours">
+        <span>定休日　水曜日・日曜日</span>
+        <span>TEL　<a class="num" href="tel:0368246259">03-6824-6259</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact + footer -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="cta-text">
+        <h2 class="h2 h2--lg">まずは、お気軽にご相談ください。</h2>
+        <p class="lead">不動産の売却・購入、収益不動産や買取のご相談など、不動産売買に関するお問い合わせはこちらからお気軽にご連絡ください。オンライン商談での査定・ご相談にも対応しております。</p>
+        <a class="tel" href="tel:0368246259"><span class="label">TEL</span><span class="number">03-6824-6259</span></a>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--fill" href="https://irie-realestate.co.jp/contact/">お問い合わせフォームへ</a>
+        <a class="btn btn--line" href="https://irie-realestate.co.jp/online-meeting/">オンライン商談について</a>
+        <a class="btn btn--line" href="https://lin.ee/bd84YN6" target="_blank" rel="noopener">LINEメルマガに登録</a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="foot-brand">
+        <a class="brand" href="https://irie-realestate.co.jp/"><span class="brand-mark">IRIE</span><span class="brand-name">株式会社アイリー</span></a>
+        <p class="foot-addr">〒101-0065 東京都千代田区西神田3丁目5-1 ウェルスクエア神保町1階<br>TEL 03-6824-6259　定休日 水曜日・日曜日</p>
+      </div>
+      <nav class="foot-nav" aria-label="フッターナビゲーション">
+        <a href="https://irie-realestate.co.jp/service/">事業内容</a>
+        <a href="https://irie-realestate.co.jp/strength/">当社の強み</a>
+        <a href="https://irie-realestate.co.jp/online-meeting/">オンライン商談について</a>
+        <a href="https://irie-realestate.co.jp/works/">実績紹介</a>
+        <a href="https://irie-realestate.co.jp/company/">会社概要</a>
+        <a href="https://irie-realestate.co.jp/news/">お知らせ</a>
+        <a href="https://irie-realestate.co.jp/contact/">お問い合わせ</a>
+        <a href="https://irie-realestate.co.jp/privacy/">プライバシーポリシー</a>
+        <a href="https://irie-realestate.co.jp/sitemap/">サイトマップ</a>
+      </nav>
+      <p class="copyright">© IRIE inc. All rights reserved.</p>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var menu = document.getElementById('menu');
+  var closeBtn = document.getElementById('menu-close');
+  if (!btn || !menu) return;
+  function open() {
+    menu.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    document.documentElement.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+  function close() {
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    document.documentElement.style.overflow = '';
+    btn.focus();
+  }
+  btn.addEventListener('click', function () { if (menu.hidden) { open(); } else { close(); } });
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  var links = menu.querySelectorAll('a');
+  for (var i = 0; i < links.length; i++) links[i].addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) close(); });
+})();
+</script>
+</body>
+</html>
