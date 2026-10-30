@@ -110,8 +110,11 @@ h1,h2,h3{font-weight:700}
 .sec.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* equipment */
-.tech{display:grid;gap:14px}
-@media(min-width:900px){.tech{grid-template-columns:1fr 1fr}}
+.tech{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.tech>*{min-width:0}
+@media(min-width:900px){.tech{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.doors>*,.split>*,.hero-grid>*,.foot>*{min-width:0}
+.modes,.plans{min-width:0;max-width:100%}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
 @media(min-width:900px){.card{padding:28px}}
 .card h3{margin:0 0 6px;font-size:21px;line-height:1.3}
@@ -203,7 +206,8 @@ footer{border-top:1px solid var(--line);padding:30px 0 110px;color:var(--muted);
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);transition:transform .25s}
 .dock .btn{flex:1;min-height:48px;font-size:14.5px;padding:0 10px}
 .dock.hide{transform:translateY(110%)}
-@media(min-width:900px){.dock{display:none}}
+@media(min-width:900px),(max-height:480px){.dock{display:none}}
+@media(max-height:480px){footer{padding-bottom:40px}}
 
 /* reveal */
 .hero-grid>*{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
@@ -211,6 +215,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 110px;color:var(--muted);
 .ready .hero-grid>*{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.hero-grid>*{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
 </style>
+<noscript><style>.hero-grid>*{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -291,26 +296,26 @@ footer{border-top:1px solid var(--line);padding:30px 0 110px;color:var(--muted);
     <figure><img src="https://images.unsplash.com/photo-1763043445102-0766411b505d?w=900&q=70&auto=format&fit=crop" alt="パッティング練習のイメージ（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
     <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/9_1.png" alt="SDR ラウンドモードの画面" onerror="this.parentNode.style.display='none'"></figure>
     <figure><img src="https://images.unsplash.com/photo-1597865992644-549ae818bd01?w=900&q=70&auto=format&fit=crop" alt="クラブとボール（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr6.jpg" alt="スタジオ内観" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1595827432953-7161e19e303e?w=900&q=70&auto=format&fit=crop" alt="ラックに並ぶアイアンとボール（仮画像）" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/05/famous_golf_courses_trackman_golf_simulator-300x190.webp" alt="TRACKMAN 4 のバーチャルコース" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1633597468433-fdb200b73f62?w=900&q=70&auto=format&fit=crop" alt="スイングのイメージ（仮画像）" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr_price.jpg" alt="スタジオ内観" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1562204320-31975a5e09ce?w=900&q=70&auto=format&fit=crop" alt="ゴルフボール（仮画像）" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/2_1.png" alt="SDR ドライビングレンジの画面" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?w=900&q=70&auto=format&fit=crop" alt="アイアンのクローズアップ（仮画像）" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr4.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1763043445102-0766411b505d?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/9_1.png" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1597865992644-549ae818bd01?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr6.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1595827432953-7161e19e303e?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/05/famous_golf_courses_trackman_golf_simulator-300x190.webp" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1633597468433-fdb200b73f62?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr_price.jpg" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1562204320-31975a5e09ce?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/2_1.png" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
-    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr6.jpg" alt="スタジオ内観" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1595827432953-7161e19e303e?w=900&q=70&auto=format&fit=crop" alt="ラックに並ぶアイアンとボール（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/05/famous_golf_courses_trackman_golf_simulator-300x190.webp" alt="TRACKMAN 4 のバーチャルコース" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1633597468433-fdb200b73f62?w=900&q=70&auto=format&fit=crop" alt="スイングのイメージ（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr_price.jpg" alt="スタジオ内観" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1562204320-31975a5e09ce?w=900&q=70&auto=format&fit=crop" alt="ゴルフボール（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/2_1.png" alt="SDR ドライビングレンジの画面" onerror="this.parentNode.style.display='none'"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?w=900&q=70&auto=format&fit=crop" alt="アイアンのクローズアップ（仮画像）" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr4.jpg" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1763043445102-0766411b505d?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/9_1.png" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1597865992644-549ae818bd01?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr6.jpg" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1595827432953-7161e19e303e?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/05/famous_golf_courses_trackman_golf_simulator-300x190.webp" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1633597468433-fdb200b73f62?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/08/iriekasouheadr_price.jpg" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1562204320-31975a5e09ce?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://golfstudio-irie.com/wp-content/uploads/2023/03/2_1.png" alt="" onerror="this.parentNode.style.display='none'"></figure>
+    <figure aria-hidden="true"><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?w=900&q=70&auto=format&fit=crop" alt="" onerror="this.parentNode.style.display='none'"></figure>
   </div>
 </div>
 
@@ -541,6 +546,17 @@ footer{border-top:1px solid var(--line);padding:30px 0 110px;color:var(--muted);
   var done=false;function go(){if(done)return;done=true;document.documentElement.classList.add('ready')}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(go)}
   setTimeout(go,900);
+  window.addEventListener('load',function(){
+    var mq=document.querySelector('.marquee'),tr=mq&&mq.querySelector('.track');if(!tr)return;
+    var all=[].slice.call(tr.children),n=all.length/2;
+    var set=all.slice(0,n).filter(function(f){return f.style.display!=='none'});
+    if(!set.length){mq.style.display='none';return}
+    var w=set.reduce(function(a,f){return a+f.getBoundingClientRect().width+12},0);
+    var k=Math.max(1,Math.ceil(window.innerWidth*1.1/w));
+    if(k===1&&set.length===n)return;
+    tr.innerHTML='';
+    for(var half=0;half<2;half++)for(var i=0;i<k;i++)set.forEach(function(f){var c=f.cloneNode(true);if(half||i)c.setAttribute('aria-hidden','true');tr.appendChild(c)});
+  });
   var dock=document.getElementById('dock'),target=document.getElementById('reserve');
   if('IntersectionObserver' in window&&dock&&target){
     new IntersectionObserver(function(es){es.forEach(function(e){dock.classList.toggle('hide',e.isIntersecting)})},{threshold:.25}).observe(target);
