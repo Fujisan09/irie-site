@@ -1,0 +1,38 @@
+name: mirror-golf-site
+# 旧サイト golfstudio-irie.com（WordPress）の HTML と画像を mirror/ に取り込む。
+# 新サイトへ移行するための素材取得用。手動実行（workflow_dispatch）か、このファイルの変更時に動く。
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/mirror-golf.yml']
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mirror pages and assets
+        run: |
+          set -x
+          mkdir -p mirror && cd mirror
+          wget --recursive --level=3 --no-parent --page-requisites --adjust-extension --no-verbose --wait=0.2 \
+            --reject-regex '(replytocom|/feed|wp-json|xmlrpc|/comments|wp-admin|wp-login|\.php)' \
+            --domains golfstudio-irie.com --user-agent 'Mozilla/5.0 (site migration mirror)' \
+            https://golfstudio-irie.com/ || true
+          # srcset / CSS 背景など wget が拾わない画像、および縮小版しかない画像の原寸版も取得
+          grep -rhoE 'https?://golfstudio-irie\.com/wp-content/uploads/[^"'"'"' )>]+\.(jpg|jpeg|png|webp|gif|svg)' . \
+            | sed -E 's/-[0-9]+x[0-9]+(\.[a-z]+)$/\1/' | sort -u > ../uploads.txt || true
+          grep -rhoE 'https?://golfstudio-irie\.com/wp-content/uploads/[^"'"'"' )>]+\.(jpg|jpeg|png|webp|gif|svg)' . | sort -u >> ../uploads.txt || true
+          sort -u ../uploads.txt -o ../uploads.txt
+          wc -l ../uploads.txt
+          wget --no-verbose --wait=0.2 --force-directories --no-host-directories --directory-prefix=golfstudio-irie.com \
+            --user-agent 'Mozilla/5.0 (site migration mirror)' -i ../uploads.txt || true
+          du -sh . ; find . -type f | wc -l
+      - name: Commit mirror
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add mirror
+          git commit -m 'mirror: golfstudio-irie.com のスナップショット（移行素材）' || echo 'nothing to commit'
+          git push
